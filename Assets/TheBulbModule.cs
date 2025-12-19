@@ -641,7 +641,10 @@ public class TheBulbModule : MonoBehaviour
             yield break;
 
         if (@in && (_wasOnAtUnscrew || _goOnAtScrewIn || _delayTurnOnUntilScrewCompletes))
+        {
             TurnLights(on: true);
+            _delayTurnOnUntilScrewCompletes = false;
+        }
 
         if (_stage == 0)
         {
